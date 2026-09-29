@@ -20,7 +20,8 @@ namespace _04_HalloNaam
 
 
             // Programma 
-            // Stap 1: Vraag naam +opslaan
+            // Stap 1: Vraag naam +opslaan 
+
             Console.Write("Geef uw naam: ");
             _naamGebruiker = Console.ReadLine();
 
