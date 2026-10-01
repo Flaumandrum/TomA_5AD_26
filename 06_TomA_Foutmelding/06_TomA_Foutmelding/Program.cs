@@ -29,7 +29,7 @@ namespace _06_TomA_Foutmelding
                 Console.Clear();
 
                 // Stap 2: Toon de tekst
-                Console.WriteLine("Getal ontvangen.");
+                Console.WriteLine($"U gaf het volgende getal in: {_getal.ToString()}");
 
             }
             catch
