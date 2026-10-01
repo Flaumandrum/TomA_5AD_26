@@ -10,6 +10,40 @@ namespace _06_TomA_Foutmelding
     {
         static void Main(string[] args)
         {
+            // Tom Adriaens
+            // 01/10/2026
+            // Project: foutmelding
+
+            // Velden 
+            int _getal = 0;
+
+            // Programma
+            
+            try
+            {
+                // Stap 1: Vraag een getal + opslaan
+                Console.Write("Geef een natuurlijk getal: ");
+                _getal = int.Parse(Console.ReadLine());
+
+                // Scherm leegmaken 
+                Console.Clear();
+
+                // Stap 2: Toon de tekst
+                Console.WriteLine("Getal ontvangen.");
+
+            }
+            catch
+            {
+                // Scherm leegmaken 
+                Console.Clear();
+
+                // Stap 2: of toon de foutmelding.
+                Console.WriteLine("Er ging iets fout.");
+            }
+
+
+
+
         }
     }
 }
