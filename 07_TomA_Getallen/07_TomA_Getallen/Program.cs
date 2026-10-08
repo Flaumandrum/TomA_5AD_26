@@ -39,6 +39,7 @@ namespace _07_TomA_Getallen
                 // Stap 4: Toon de juiste tekst
                 Console.WriteLine($"Dit was het 3de getal: {_getal3.ToString()}\nDit was het 2de getal:{_getal2.ToString()}\nDit was het 1ste getal:{_getal1.ToString()}");
                 Console.WriteLine("\nDruk op enter om af te sluiten.");
+                Console.ReadKey();
             }
             catch
             {
