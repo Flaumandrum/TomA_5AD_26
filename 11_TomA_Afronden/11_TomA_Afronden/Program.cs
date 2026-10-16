@@ -52,7 +52,7 @@ namespace _11_TomA_Afronden
             }
 
             // Stap 6:  ga na of double exact 0.3 weergeeft
-            if (_doublevar == 0.3)
+            if (_doublevar == 0.3D)
             {
                 //    Als ja:
                 //            stap 7: Toon “exact 0.3”
