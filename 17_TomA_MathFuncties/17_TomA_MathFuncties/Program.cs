@@ -49,34 +49,235 @@ namespace _17_TomA_MathFuncties
                     // Als 1: grootste of kleinste
                     if (_keuze == 1)
                     {
-                        // Stap 5: Vraag 2 getallen + opslaan
+                        bool herhalen = true;
 
-                        // Stap 6: toon menu(kleinst, grootste )
+                        do
+                        {
+                            // Scherm leegmaken
+                            Console.Clear();
 
-                        // Stap 7: geef het juiste antwoord
+                            try
+                            {
+                                // Stap 5: Vraag 2 getallen + opslaan
+                                Console.Write("Geef een eerste getal: ");
+                                int getal1 = int.Parse(Console.ReadLine());
+
+                                Console.Write("\nGeef een tweede getal: ");
+                                int getal2 = int.Parse(Console.ReadLine());
+
+                                // Scherm leegmaken
+                                Console.Clear();
+
+                                // Stap 6: toon menu(kleinste, grootste )
+                                Console.WriteLine("Welke bewerking wil je uitvoeren?");
+                                Console.WriteLine("  1) bepaal het kleinste getal");
+                                Console.WriteLine("  2) bepaal het grootste getal");
+
+                                try
+                                {
+
+                                    Console.Write("\nGeef uw keuze: ");
+                                    Byte keuze = Byte.Parse(Console.ReadLine());
+
+                                    // Scherm leegmaken
+                                    Console.Clear();
+
+                                    // Stap 7: geef het juiste antwoord
+                                    if (keuze == 1)
+                                    {
+                                        Console.WriteLine($"Het kleinste getal is: {Math.Min(getal1, getal2).ToString()}");
+                                        Console.ReadKey();
+                                    }
+                                    else if(keuze == 2)
+                                    {
+                                        Console.WriteLine($"Het grootste getal is: {Math.Max(getal1, getal2).ToString()}");
+                                        Console.ReadKey();
+                                    }
+                                    else
+                                    {
+                                        // foutmelding
+                                        Console.WriteLine("Dit is geen juiste keuze. ");
+                                        Console.WriteLine("\nDruk op enter en probeer opnieuw.");
+                                        Console.ReadKey();
+                                    }
+
+                                    // Lussen stoppen
+                                    herhalen = false;
+
+                                }
+                                catch
+                                {
+                                    // Scherm leegmaken
+                                    Console.Clear();
+
+                                    // Foutmelding
+                                    Console.WriteLine("U gaf geen getal in.");
+                                    Console.WriteLine("\nDruk op enter om terug te keren naar deze keuze.");
+                                    Console.ReadKey();
+                                }
+
+
+                            }
+                            catch
+                            {
+                                // Scherm leegmaken
+                                Console.Clear();
+
+                                // Foutmelding
+                                Console.WriteLine("U gaf geen getal in.");
+                                Console.WriteLine("\nDruk op enter om terug te keren naar deze keuze.");
+                                Console.ReadKey();
+                            }
+                        } while (herhalen);
                     }
 
                     // Als 2: teken en absolute waarde
                     else if (_keuze == 2)
                     {
+                        bool herhalen = true;
 
-                        // Stap 8: vraag getal +opslaan
+                        do
+                        {
+                            // Scherm leegmaken
+                            Console.Clear();
 
-                        // Stap 9: Toon positief of negatief
+                            try
+                            {
+                                // Stap 8: vraag getal +opslaan
+                                Console.Write("Geef een getal: ");
+                                int getal = int.Parse(Console.ReadLine());
 
-                        // Stap 10: Toon absolute waarde
+                                // Scherm leegmaken
+                                Console.Clear();
 
+                                // Toon het menu
+                                Console.WriteLine("Welke bewerking wil je uitvoeren?");
+                                Console.WriteLine("  1) geef weer of het getal positief of negatief is");
+                                Console.WriteLine("  2) geef de absolute waarde");
+                                try
+                                {
+
+                                    Console.Write("\nGeef uw keuze: ");
+                                    Byte keuze = Byte.Parse(Console.ReadLine());
+
+                                    // Scherm leegmaken
+                                    Console.Clear();
+
+                                    // Stap 9: Toon positief of negatief
+                                    if (keuze == 1)
+                                    {
+                                        // Kijk of het getal positief is 
+                                        if(Math.Sign(getal)==1)
+                                        {   
+                                            Console.WriteLine($"Het getal is positief");
+                                            
+                                        }
+                                        // Kijk of het 0 is
+                                        else if (Math.Sign(getal) == 0)
+                                        {
+                                            Console.WriteLine($"Het getal is nul");
+                                        }
+                                        // Anders is het negatief
+                                        else
+                                        {
+                                            Console.WriteLine($"Het getal is negatief");
+                                        }
+
+                                        Console.ReadKey();
+                                    }
+                                    // Stap 10: Toon absolute waarde
+                                    else if (keuze == 2)
+                                    {
+                                        Console.WriteLine($"De absolute waarde van het getal is: {Math.Abs(getal).ToString()}");
+                                        Console.ReadKey();
+                                    }
+                                    else
+                                    {
+                                        // foutmelding
+                                        Console.WriteLine("Dit is geen juiste keuze. ");
+                                        Console.WriteLine("\nDruk op enter en probeer opnieuw.");
+                                        Console.ReadKey();
+                                    }
+                                    // Lussen stoppen
+                                    herhalen = false;
+
+                                }
+                                catch
+                                {
+                                    // Scherm leegmaken
+                                    Console.Clear();
+
+                                    // Foutmelding
+                                    Console.WriteLine("U gaf geen getal in.");
+                                    Console.WriteLine("\nDruk op enter om terug te keren naar deze keuze.");
+                                    Console.ReadKey();
+                                }
+                            }
+                            catch
+                            {
+                                // Scherm leegmaken
+                                Console.Clear();
+
+                                // Foutmelding
+                                Console.WriteLine("U gaf geen getal in.");
+                                Console.WriteLine("\nDruk op enter om terug te keren naar deze keuze.");
+                                Console.ReadKey();
+                            }
+                        } while (herhalen);
                     }
                     //Als 3: afronden
                     else if (_keuze == 3)
                     {
-                        // Stap 11: Vraag een kommagetal van minstens 3 cijfers na de komma
+                        bool herhalen = true;
 
-                        // Stap 12: Ga na of er 3 cijfers zijn na de komma
-                        // Stap 13: Toon het getal afgerond na de komma
-                        // Stap 14 : toon het getal afgerond naar dichtstbijzijnde natuurlijk getal
+                        do
+                        {
+                            // Scherm leegmaken
+                            Console.Clear();
 
-                        // Stap 15: Toon het getal met het 2de cijfer na de komma afgerond naar boven
+                            try
+                            {
+                                // Stap 11: Vraag een kommagetal van minstens 3 cijfers na de komma
+                                Console.Write("Geef een getal met minsten 3 cijfers na de komma: ");
+                                double getal = double.Parse(Console.ReadLine().Replace(".",","));
+
+                                // Scherm leegmaken
+                                Console.Clear();
+
+                                // Stap 12: Ga na of er 3 cijfers zijn na de komma
+                                if (getal.ToString().IndexOf(".")!= -1 && (getal.ToString().Length-getal.ToString().IndexOf(".")>3))
+                                {
+                                    // Stap 13: Toon het getal afgerond tot 2 cijfers na de komma
+                                    Console.WriteLine($"Het afgeronde getal is: {Math.Round(getal,2)}");
+                                    // Stap 14 : toon het getal afgerond naar dichtstbijzijnde natuurlijk getal
+                                    Console.WriteLine($"Het afgeronde getal is: {Math.Round(getal)}");
+                                    // Stap 15: Toon het getal met het 2de cijfer na de komma afgerond naar boven
+                                    Console.WriteLine($"Het afgeronde getal is: {Math.Ceiling(Math.Round(getal, 2))}");
+                                }
+                                else
+                                {
+                                    // Foutmelding
+                                    Console.WriteLine("U gaf geen getal in met minsten 3 cijfers na de komma.");
+                                }
+
+                                Console.WriteLine("\nDruk op enter om terug te keren naar het hoofdmenu.");
+                                Console.ReadKey();
+
+                                // Lussen stoppen
+                                herhalen = false;
+
+                            }
+                            catch
+                            {
+                                // Scherm leegmaken
+                                Console.Clear();
+
+                                // Foutmelding
+                                Console.WriteLine("U gaf geen getal in.");
+                                Console.WriteLine("\nDruk op enter om terug te keren naar deze keuze.");
+                                Console.ReadKey();
+                            }
+                        } while (herhalen);
                     }
 
                     //Als 4: 	Macht
