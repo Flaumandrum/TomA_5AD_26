@@ -87,11 +87,17 @@ namespace _17_TomA_MathFuncties
                                     {
                                         Console.WriteLine($"Het kleinste getal is: {Math.Min(getal1, getal2).ToString()}");
                                         Console.ReadKey();
+
+                                        // Lussen stoppen
+                                        herhalen = false;
                                     }
                                     else if(keuze == 2)
                                     {
                                         Console.WriteLine($"Het grootste getal is: {Math.Max(getal1, getal2).ToString()}");
                                         Console.ReadKey();
+
+                                        // Lussen stoppen
+                                        herhalen = false;
                                     }
                                     else
                                     {
@@ -101,8 +107,7 @@ namespace _17_TomA_MathFuncties
                                         Console.ReadKey();
                                     }
 
-                                    // Lussen stoppen
-                                    herhalen = false;
+                                    
 
                                 }
                                 catch
@@ -169,27 +174,33 @@ namespace _17_TomA_MathFuncties
                                         // Kijk of het getal positief is 
                                         if(Math.Sign(getal)==1)
                                         {   
-                                            Console.WriteLine($"Het getal is positief");
+                                            Console.WriteLine("Het getal is positief");
                                             
                                         }
                                         // Kijk of het 0 is
                                         else if (Math.Sign(getal) == 0)
                                         {
-                                            Console.WriteLine($"Het getal is nul");
+                                            Console.WriteLine("Het getal is nul");
                                         }
                                         // Anders is het negatief
                                         else
                                         {
-                                            Console.WriteLine($"Het getal is negatief");
+                                            Console.WriteLine("Het getal is negatief");
                                         }
 
                                         Console.ReadKey();
+
+                                        // Lussen stoppen
+                                        herhalen = false;
                                     }
                                     // Stap 10: Toon absolute waarde
                                     else if (keuze == 2)
                                     {
                                         Console.WriteLine($"De absolute waarde van het getal is: {Math.Abs(getal).ToString()}");
                                         Console.ReadKey();
+
+                                        // Lussen stoppen
+                                        herhalen = false;
                                     }
                                     else
                                     {
@@ -198,8 +209,6 @@ namespace _17_TomA_MathFuncties
                                         Console.WriteLine("\nDruk op enter en probeer opnieuw.");
                                         Console.ReadKey();
                                     }
-                                    // Lussen stoppen
-                                    herhalen = false;
 
                                 }
                                 catch
@@ -243,16 +252,17 @@ namespace _17_TomA_MathFuncties
 
                                 // Scherm leegmaken
                                 Console.Clear();
+                                string test = getal.ToString();
 
                                 // Stap 12: Ga na of er 3 cijfers zijn na de komma
-                                if (getal.ToString().IndexOf(".")!= -1 && (getal.ToString().Length-getal.ToString().IndexOf(".")>3))
+                                if (getal.ToString().IndexOf(",")!= -1 && (getal.ToString().Length-getal.ToString().IndexOf(",")>3))
                                 {
                                     // Stap 13: Toon het getal afgerond tot 2 cijfers na de komma
-                                    Console.WriteLine($"Het afgeronde getal is: {Math.Round(getal,2)}");
+                                    Console.WriteLine($"Het afgeronde getal is: {Math.Round(getal,2).ToString()}");
                                     // Stap 14 : toon het getal afgerond naar dichtstbijzijnde natuurlijk getal
-                                    Console.WriteLine($"Het afgeronde getal is: {Math.Round(getal)}");
+                                    Console.WriteLine($"Het afgeronde getal is: {Math.Round(getal).ToString()}");
                                     // Stap 15: Toon het getal met het 2de cijfer na de komma afgerond naar boven
-                                    Console.WriteLine($"Het afgeronde getal is: {Math.Ceiling(Math.Round(getal, 2))}");
+                                    Console.WriteLine($"Het afgeronde getal is: {(Math.Ceiling(getal*100)/100).ToString()}");
                                 }
                                 else
                                 {
@@ -283,29 +293,118 @@ namespace _17_TomA_MathFuncties
                     //Als 4: 	Macht
                     else if (_keuze == 4)
                     {
-                        // Stap 16: Vraag een getal + opslaan
+                        bool herhalen = true;
 
-                        // Stap 17: Bereken de 2de, 3de en 4de macht
+                        do
+                        {
+                            // Scherm leegmaken
+                            Console.Clear();
 
-                        // Stap 18: Toon resultaat
+                            try
+                            {
+
+                                // Stap 16: Vraag een getal + opslaan
+                                Console.Write("Geef een getal in:");
+                                int getal = int.Parse(Console.ReadLine());
+
+                                // Stap 17: Bereken de 2de, 3de en 4de macht
+                                double tweede = Math.Pow(getal, 2);
+                                double derde = Math.Pow(getal, 3);
+                                double vierde = Math.Pow(getal, 4);
+
+                                // Stap 18: Toon resultaat
+                                Console.WriteLine("Hier zijn de uitkomsten van de verschillende machten:");
+                                Console.WriteLine($"tot de tweede macht: {tweede.ToString()}");
+                                Console.WriteLine($"tot de derde macht: {derde.ToString()}");
+                                Console.WriteLine($"tot de vierder macht: {vierde.ToString()}");
+                                Console.ReadKey();
+
+                            }
+                            catch
+                            {
+                                // Scherm leegmaken
+                                Console.Clear();
+
+                                // Foutmelding
+                                Console.WriteLine("U gaf geen getal in.");
+                                Console.WriteLine("\nDruk op enter om terug te keren naar deze keuze.");
+                                Console.ReadKey();
+                            }
+                        } while (herhalen);
                     }
                     // Als 5: Vierkantswortel
                     else if (_keuze == 5)
                     {
-                        // Stap 19: Vraag een getal + opslaan
+                        bool herhalen = true;
 
-                        // Stap 20: Bereken de vierkantswortel + afronden
+                        do
+                        {
+                            // Scherm leegmaken
+                            Console.Clear();
 
-                        // Stap 21: Toon resultaat
+                            try
+                            {
+                                // Stap 19: Vraag een getal + opslaan
+                                Console.Write("Geef een getal in:");
+                                int getal = int.Parse(Console.ReadLine());
+
+                                // Stap 20: Bereken de vierkantswortel + afronden
+                                double uitkomst = Math.Sqrt(getal);
+
+                                // Stap 21: Toon resultaat
+                                Console.WriteLine($"de vierkantswortel van {getal.ToString()} =  {uitkomst.ToString()}");
+                                Console.ReadKey();
+                            }
+                            catch
+                            {
+                                // Scherm leegmaken
+                                Console.Clear();
+
+                                // Foutmelding
+                                Console.WriteLine("U gaf geen getal in.");
+                                Console.WriteLine("\nDruk op enter om terug te keren naar deze keuze.");
+                                Console.ReadKey();
+                            }
+                        } while (herhalen);
                     }
                     // Als 6: Inhoud cilinder
                     else if (_keuze == 6)
                     {
-                        // Stap 22: Vraag straal van het bodemvlak + opslaan
+                        bool herhalen = true;
 
-                        // Stap 23: Vraag hoogte van de cilinder + opslaan
+                        do
+                        {
+                            // Scherm leegmaken
+                            Console.Clear();
 
-                        // Stap 24: maak de berekening voor inhoud en omtrek, rond af tot 2 cijfers na de komma +toon resultaat
+                            try
+                            {
+                                // Stap 22: Vraag straal van het bodemvlak + opslaan
+                                Console.Write("Geef de straal in van het grondvlak in cm:");
+                                double straal = double.Parse(Console.ReadLine().Replace(".",","));
+
+                                // Stap 23: Vraag hoogte van de cilinder + opslaan
+                                Console.Write("Geef de hoogte in van de cilinder in cm:");
+                                double hoogte = double.Parse(Console.ReadLine().Replace(".", ",")));
+
+                                // Stap 24: maak de berekening voor inhoud en omtrek, rond af tot 2 cijfers na de komma +toon resultaat
+                                Console.WriteLine($"De inhoud van uw cilinder is: {(Math.Round(Math.Pow(straal, 2)*Math.PI* hoogte),2).ToString()} in cm³");
+                                Console.WriteLine($"De omtrek van de cilinder is: {Math.Round(Math.Pow(straal,2)*Math.PI *2 +2 * Math.PI * straal,2).ToString()} in cm²");
+
+                                Console.WriteLine("\nDruk op enter om terug te keren naar deze keuze.");
+                                Console.ReadKey();
+                            }
+                            catch
+                            {
+                                // Scherm leegmaken
+                                Console.Clear();
+
+                                // Foutmelding
+                                Console.WriteLine("U gaf geen getal in.");
+                                Console.WriteLine("\nDruk op enter om terug te keren naar deze keuze.");
+                                Console.ReadKey();
+                            }
+                        } while (herhalen);
                     }
                     // Als 7 :
                     else if (_keuze == 7)
@@ -336,7 +435,7 @@ namespace _17_TomA_MathFuncties
 
                 }
 
-                // Stap 26: Als keuze niet 7 is: ga terug naar  Stap 2
+            // Stap 26: Als keuze niet 7 is: ga terug naar  Stap 2
             } 
             while (_keuze != 7);
 
