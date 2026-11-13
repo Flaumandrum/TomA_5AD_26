@@ -70,6 +70,74 @@ namespace _21_TomA_DateTimeFuncties
             TimeSpan verschil = datum2 - _datum;
             Console.WriteLine($"{verschil.ToString()} \n");
 
+            double aantalDagen = verschil.Days; // Geeft het aantal dagen afgerond
+            double aantalDagen2 = verschil.TotalDays; // Kan een kommagetal zijn
+
+            Console.WriteLine($"Days = {aantalDagen.ToString()} en totaldays = {aantalDagen2.ToString()}\n");
+            
+            double aantalUren = verschil.Hours; // Geeft het aantal dagen afgerond
+            double aantalUren2 = verschil.TotalHours; // Kan een kommagetal zijn
+
+            Console.WriteLine($"Hours = {aantalUren.ToString()} en totalhours = {aantalUren2.ToString()}\n");
+
+            Console.WriteLine("\nDruk op enter om verder te gaan ");
+            Console.ReadKey();
+
+            // Scherm wissen.
+            Console.Clear();
+
+            // laat de gebruiker een datum ingeven 
+            Console.Write("\nGeef een datum in (dd/mm/jjjj): ");
+            string datum = Console.ReadLine();
+
+            // laat de gebruiker een tijdstip ingeven
+            Console.Write("\nGeef een bepaald tijdstip van deze dag in (hh:mm): ");
+            String tijdstip = Console.ReadLine();
+
+            try
+            {
+                DateTime ingegevenDatum = DateTime.Parse($"{datum} {tijdstip}");
+                DateTime enkelDatum = DateTime.Parse($"{datum}");
+                DateTime enkelUur = DateTime.Parse($"{tijdstip}");
+
+                Console.WriteLine($"Hier is de volledige datum en tijd: {ingegevenDatum.ToString()}");
+                Console.WriteLine($"Hier is enkel de datum:{enkelDatum.ToString()} ");
+                Console.WriteLine($"Hier is enkel de tijd: {enkelUur.ToString()}");
+
+                // bevestiging
+                Console.WriteLine("Gelukt");
+                Console.WriteLine("\nDruk op enter om verder te gaan ");
+                Console.ReadKey();
+
+                // scherm leegmaken
+                Console.Clear();
+
+                // zeg of de ingegeven datum vroeger of later is dan vandaag. 
+                if(_datum.Date < ingegevenDatum.Date)
+                {
+                    Console.WriteLine("jouw ingegeven datum ligt in de toekomst!");
+                }
+                else if (_datum.Date > ingegevenDatum.Date)
+                {
+                    Console.WriteLine("jouw ingegeven datum ligt in het verleden!");
+                }
+                else
+                {
+                    Console.WriteLine("jouw ingegeven datum is de dag van vandaag!");
+                }
+                Console.WriteLine("\nDruk op enter om verder te gaan ");
+                Console.ReadKey();
+            }
+            catch
+            {
+                // foutcode
+                Console.WriteLine("Er ging iets mis.");
+                Console.WriteLine("\nDruk op enter om verder te gaan ");
+                Console.ReadKey();
+            }
+
+
+
         }
 
     }
